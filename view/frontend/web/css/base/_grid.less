@@ -1,0 +1,30 @@
+.cscheckout-generate-grid(@prefix) {
+    .cscheckout-loop-grid(@index) when (@index >= 0) {
+        @{prefix}fc-col-@{index} {
+            width: 100% / 12 * @index !important;
+        }
+        .cscheckout-loop-grid(@index - 1);
+    }
+    .cscheckout-loop-grid(12);
+
+    // 1. Can't use this class, becase we use inline-block for the fields
+    // 2. Grid is not used becase fields are rendered in fieldset which is not supports grid layout in Chrome
+    @{prefix}fc-col-newline {
+        clear: left;
+    }
+}
+
+.cscheckout-generate-grid(~'.');
+
+.fc-size-l {
+    .cscheckout-generate-grid(~'.fc-size-l\:');
+}
+.fc-size-m {
+    .cscheckout-generate-grid(~'.fc-size-m\:');
+}
+.fc-size-s {
+    .cscheckout-generate-grid(~'.fc-size-s\:');
+}
+.fc-size-xs {
+    .cscheckout-generate-grid(~'.fc-size-xs\:');
+}

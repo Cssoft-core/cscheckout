@@ -1,0 +1,6 @@
+type StoreConfig {
+    cscheckout_general_enabled : Int  @doc(description: "Extended Config Data - cscheckout/general/enabled")
+    cscheckout_design_page_layout : String  @doc(description: "Extended Config Data - cscheckout/design/page_layout")
+    cscheckout_design_layout : String  @doc(description: "Extended Config Data - cscheckout/general/layout")
+    cscheckout_design_place_order_button_position : String  @doc(description: "Extended Config Data - cscheckout/design/place_order_button_position")
+}

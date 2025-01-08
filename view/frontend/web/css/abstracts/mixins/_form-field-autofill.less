@@ -1,0 +1,10 @@
+.lib-fc-form-input-autofill() {
+    &:-cssoft-autofill {
+        & when not (@fc-form-field__autofill__background-color = false) {
+            -cssoft-box-shadow: 0 0 0 50px @fc-form-field__autofill__background-color inset !important;
+        }
+        & when not (@fc-form-field__autofill__color = false) {
+            -cssoft-text-fill-color: @fc-form-field__autofill__color !important;
+        }
+    }
+}

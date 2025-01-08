@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference
+        for="CSSoft\Cscheckout\Api\GuestShippingMethodManagementInterface"
+        type="CSSoft\Cscheckout\Model\GuestShippingMethodManagement"
+    />
+    <preference
+        for="CSSoft\Cscheckout\Api\ShippingMethodManagementInterface"
+        type="CSSoft\Cscheckout\Model\ShippingMethodManagement"
+    />
+
+    <preference
+        for="CSSoft\Cscheckout\Api\GuestShippingAddressManagementInterface"
+        type="CSSoft\Cscheckout\Model\GuestShippingAddressManagement"
+    />
+    <preference
+        for="CSSoft\Cscheckout\Api\ShippingAddressManagementInterface"
+        type="CSSoft\Cscheckout\Model\ShippingAddressManagement"
+    />
+
+    <!-- Fix missing email address in quote table -->
+    <type name="Magento\Quote\Api\CartManagementInterface">
+        <plugin name="cssoft_cscheckout" type="CSSoft\Cscheckout\Plugin\Model\QuoteManagement" />
+    </type>
+
+    <!-- Sort shipping methods by their price -->
+    <type name="Magento\Quote\Api\ShippingMethodManagementInterface">
+        <plugin name="cssoft_cscheckout" type="CSSoft\Cscheckout\Plugin\Model\ShippingMethodManagement" />
+    </type>
+
+    <!-- Backend Theme Editor -->
+    <type name="Magento\Framework\View\Asset\Source">
+        <plugin name="Cscheckout" type="CSSoft\Cscheckout\Plugin\View\AssetSource" />
+    </type>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <packages>
+        <package>cssoft/cscheckout</package>
+        <package>cssoft/module-cscheckout</package>
+    </packages>
+
+    <fields>
+        <field name="cscheckout_layout" title="Select Cscheckout Layout">
+            <source_model>CSSoft\Cscheckout\Model\Config\Source\Layout</source_model>
+        </field>
+        <field name="cscheckout_theme" title="Select Cscheckout Theme">
+            <option title="Light">light</option>
+            <option title="Midnight">midnight</option>
+            <option title="Round">round</option>
+        </field>
+    </fields>
+
+    <commands>
+        <command class="CSSoft\Marketplace\Installer\Command\Config">
+            <data>
+                <item name="cscheckout/general/enabled">1</item>
+                <item name="cscheckout/general/layout" helper="CSSoft\Marketplace\Installer\Helper\Request::getData">
+                    <param name="key">cscheckout_layout</param>
+                </item>
+                <item name="cscheckout/design/theme" helper="CSSoft\Marketplace\Installer\Helper\Request::getData">
+                    <param name="key">cscheckout_theme</param>
+                </item>
+            </data>
+        </command>
+    </commands>
+</config>

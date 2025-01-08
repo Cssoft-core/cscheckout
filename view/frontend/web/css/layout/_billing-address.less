@@ -1,0 +1,162 @@
+.cscheckout {
+    .checkout-billing-address {
+        .billing-address-details {
+            box-sizing: border-box;
+            .padding(0 0 0 28px);
+            background: transparent;
+            line-height: 27px;
+            &:empty {
+                display: none;
+            }
+            .action-edit-address {
+                margin: 8px 0 0 0;
+            }
+        }
+        .actions-toolbar {
+            margin-top: 5px;
+
+            .fc-billing-instant-save& {
+                display: none;
+            }
+
+            .primary {
+                .float(right);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                .action {
+                    + .action {
+                        margin: 0 10px;
+                    }
+                    flex-grow: 0;
+                    width: auto;
+                    margin: 0;
+                }
+                .action-cancel {
+                    order: -1;
+                }
+            }
+        }
+        + .opc-payment,
+        + div.payment-option {
+            margin-top: 25px;
+        }
+    }
+
+    // billing address inside shipping step
+    .checkout-shipping-address {
+        .checkout-billing-address {
+            margin: 0;
+            .fieldset {
+                margin: 0;
+            }
+
+            + #checkout-step-shipping {
+                .shipping-address-items {
+                    margin-top: 15px;
+                }
+                .equal-billing-shipping& {
+                    margin-top: 15px;
+                    .shipping-address-items {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    @{fc-container__selector} .opc-wrapper {
+        .checkout-shipping-address {
+            .checkout-billing-address {
+                .billing-address {
+                    &-same-as-shipping-block {
+                        margin: 0 0 3px;
+                        display: block;
+
+                        + .fieldset {
+                            margin-top: 0;
+                        }
+                    }
+                }
+                .field-select-billing .control .select {
+                    margin-bottom: 15px !important;
+                }
+                .field-select-billing + div {
+                    margin-top: 0px;
+                }
+                .step-title {
+                    margin-top: 15px;
+                    .equal-billing-shipping& {
+                        display: none;
+                    }
+                }
+            }
+            .step-content .checkout-billing-address .step-title {
+                margin-bottom: -15px;
+            }
+        }
+    }
+
+    .checkout-payment-method {
+        .payment-method {
+            .checkout-billing-address {
+                margin: 0 0 10px;
+            }
+        }
+    }
+
+    &,
+    .checkout-payment-method,
+    .checkout-payment-method .payment-method .fieldset {
+        .billing-address {
+            &-same-as-shipping-block {
+                margin: 0 0 10px;
+                padding: 0;
+            }
+            &-form {
+                max-width: none;
+            }
+        }
+    }
+
+    &.equal-billing-shipping {
+        .billing-address-details {
+            display: none;
+        }
+    }
+    &.cscheckout-quote-virtual {
+        .checkout-billing-address {
+            > .fieldset {
+                margin-top: -10px;
+            }
+        }
+        .payment-method-content {
+            .billing-address-details {
+                .padding(0 0 0 18px);
+            }
+        }
+    }
+
+    .step-content + .checkout-billing-address {
+        margin-top: 15px;
+    }
+    .checkout-shipping-address {
+        .form-shipping-address ~ .checkout-billing-address {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media @fc-screen__base__media and (max-width: 1150px) {
+    .cscheckout {
+        &:not(.cscheckout-quote-virtual) {
+            .checkout-billing-address {
+                > .fieldset {
+                    margin-left: -5px;
+                    margin-right: -5px;
+                }
+            }
+        }
+    }
+}
