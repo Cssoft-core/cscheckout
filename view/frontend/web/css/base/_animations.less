@@ -1,0 +1,54 @@
+@-cssoft-keyframes cscheckout-shake {
+    10%, 90% {
+        -cssoft-transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        -cssoft-transform: translate3d(1px, 0, 0);
+    }
+    30%, 50%, 70% {
+        -cssoft-transform: translate3d(-1px, 0, 0);
+    }
+    40%, 60% {
+        -cssoft-transform: translate3d(1px, 0, 0);
+    }
+}
+@keyframes cscheckout-shake {
+    10%, 90% {
+        -cssoft-transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        -cssoft-transform: translate3d(1px, 0, 0);
+    }
+    30%, 50%, 70% {
+        -cssoft-transform: translate3d(-1px, 0, 0);
+    }
+    40%, 60% {
+        -cssoft-transform: translate3d(1px, 0, 0);
+    }
+}
+
+.cscheckout-shake {
+    animation: cscheckout-shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+@-cssoft-keyframes cscheckout-spin {
+    to {
+        -cssoft-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cscheckout-spin {
+    to {
+        -cssoft-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cscheckout-pulse {
+    50% {
+        opacity: .4;
+    }
+}

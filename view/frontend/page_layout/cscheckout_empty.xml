@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty"/>
+    <referenceContainer name="page.wrapper">
+        <container name="cscheckout.header.container" as="cscheckout_header_container" label="Cscheckout Page Header Container" htmlTag="header" htmlClass="cscheckout-header" before="main.content">
+            <container name="cscheckout.header.wrapper" label="Cscheckout Page Header" as="cscheckout_header_wrapper" htmlTag="div" htmlClass="header content"/>
+        </container>
+    </referenceContainer>
+</layout>
